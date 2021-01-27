@@ -2437,21 +2437,17 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\maxds\\.nuget\\packages\\": {},
-    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
+    "C:\\Users\\maxds\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\maxds\\git\\bitbucket\\c-module-1-capstone-team-1\\19_Capstone\\Capstone\\Capstone.csproj",
+      "projectUniqueName": "C:\\Users\\maxds\\Documents\\GitHub\\VendingMachineConsoleApp\\Capstone.csproj",
       "projectName": "Capstone",
-      "projectPath": "C:\\Users\\maxds\\git\\bitbucket\\c-module-1-capstone-team-1\\19_Capstone\\Capstone\\Capstone.csproj",
+      "projectPath": "C:\\Users\\maxds\\Documents\\GitHub\\VendingMachineConsoleApp\\Capstone.csproj",
       "packagesPath": "C:\\Users\\maxds\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\maxds\\git\\bitbucket\\c-module-1-capstone-team-1\\19_Capstone\\Capstone\\obj\\",
+      "outputPath": "C:\\Users\\maxds\\Documents\\GitHub\\VendingMachineConsoleApp\\obj\\",
       "projectStyle": "PackageReference",
-      "fallbackFolders": [
-        "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
-      ],
       "configFilePaths": [
         "C:\\Users\\maxds\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
@@ -2502,7 +2498,7 @@
         ],
         "assetTargetFallback": true,
         "warn": true,
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.300\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "c:\\program files\\dotnet\\sdk\\3.1.403\\RuntimeIdentifierGraph.json"
       }
     }
   }

@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "5HMQFjbw5Itio/Sx0r9i/x/7xqBNBD8bVcvyk5cWIJ/AiObUNy1j+NbQG4+diM8GG3zgVuQJpVOYaqDt9LJvXg==",
+  "dgSpecHash": "epZtoL9T8/PXL1i+i9J0q1J6PuJijLOL5vv23q19KoBKlAkR3XYMe58mNMECVr35Yx0c9Df03+SKQBDIWfAHAQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\maxds\\git\\bitbucket\\c-module-1-capstone-team-1\\19_Capstone\\Capstone\\Capstone.csproj",
+  "projectFilePath": "C:\\Users\\maxds\\Documents\\GitHub\\VendingMachineConsoleApp\\Capstone.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\maxds\\.nuget\\packages\\figgle\\0.3.0\\figgle.0.3.0.nupkg.sha512",
     "C:\\Users\\maxds\\.nuget\\packages\\microsoft.netcore.app\\2.1.0\\microsoft.netcore.app.2.1.0.nupkg.sha512",
