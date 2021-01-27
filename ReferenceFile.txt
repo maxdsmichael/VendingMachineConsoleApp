@@ -1,0 +1,163 @@
+﻿public abstract class Item : ICloneable
+{
+    private static int totalItemCount = 0;
+
+    protected readonly int itemID;
+    protected readonly string itemName;
+    protected readonly ItemMakerType.Value itemMaker;
+    protected readonly double itemPrice;
+
+    public Item(string itemName, ItemMakerType.Value itemMaker, double itemPrice)
+    {
+        this.itemID = totalItemCount++;
+        this.itemName = itemName;
+        this.itemMaker = itemMaker;
+        this.itemPrice = itemPrice;
+    }
+    public Item(Item item)
+    {
+        this.itemID = item.itemID;
+        this.itemName = item.itemName;
+        this.itemMaker = item.itemMaker;
+        this.itemPrice = item.itemPrice;
+    }
+
+    public int ItemID
+    {
+        get
+        {
+            return this.itemID;
+        }
+    }
+    public string ItemName
+    {
+        get
+        {
+            return this.itemName;
+        }
+    }
+    public ItemMakerType.Value ItemMaker
+    {
+        get
+        {
+            return this.itemMaker;
+        }
+    }
+    public double ItemPrice
+    {
+        get
+        {
+            return this.itemPrice;
+        }
+    }
+
+    public static int TotalItems()
+    {
+        return totalItemCount;
+    }
+
+    public override string ToString()
+    {
+        return string.Format("[Item Details] ID: {0}, Name: {1}, Maker: {2}, Price: {3}",
+            this.itemID, this.itemName, this.itemMaker.ToString(), itemPrice.ToString("C"));
+    }
+    public override bool Equals(object obj)
+    {
+        Item castedItem;
+        try
+        {
+            castedItem = (Item)obj;
+            return this.itemID == castedItem.itemID;
+        }
+        catch { }
+        return false;
+    }
+    public override int GetHashCode()
+    {
+        return this.itemID;
+    }
+
+    public abstract Object Clone();
+}
+public class ItemFood : Item, IEatable
+{
+    protected int packCapacity;
+
+    public ItemFood(string itemName, ItemMakerType.Value itemMaker, int packCapacity, double itemPrice)
+        : base(itemName, itemMaker, itemPrice)
+    {
+        this.packCapacity = packCapacity;
+    }
+    public ItemFood(ItemFood itemFood) :
+        base(itemFood)
+    {
+        this.packCapacity = itemFood.packCapacity;
+    }
+
+    public int PackCapacity
+    {
+        get
+        {
+            return this.packCapacity;
+        }
+    }
+
+    public void Eat()
+    {
+        this.packCapacity = 0;
+    }
+
+    public override Object Clone()
+    {
+        return new ItemFood(this);
+    }
+    public override string ToString()
+    {
+        return string.Format("[FOOD] ID: {0}, Name: {1}, Maker: {2}, Price: {3}",
+            this.itemID, string.Format("{0} ({1}g)", this.itemName, this.packCapacity), this.itemMaker, this.itemPrice.ToString("C"));
+    }
+}
+public class ItemDrink : Item, IDrinkable
+{
+    protected int canCapacity;
+
+    public ItemDrink(string itemName, ItemMakerType.Value itemMaker, int canCapacity, double itemPrice)
+        : base(itemName, itemMaker, itemPrice)
+    {
+        this.canCapacity = canCapacity;
+    }
+    public ItemDrink(ItemDrink itemDrink) :
+        base(itemDrink)
+    {
+        this.canCapacity = itemDrink.canCapacity;
+    }
+
+    public int CanCapacity
+    {
+        get
+        {
+            return this.canCapacity;
+        }
+    }
+    public void Drink()
+    {
+        this.canCapacity = 0;
+    }
+
+    public override Object Clone()
+    {
+        return new ItemDrink(this);
+    }
+    public override string ToString()
+    {
+        return string.Format("[DRINK] ID: {0}, Name: {1}, Maker: {2}, Price: {3}",
+            this.itemID, string.Format("{0} ({1}ml)", this.itemName, this.canCapacity), this.itemMaker, this.itemPrice.ToString("C"));
+    }
+}
+public static class ItemMakerType
+{
+    public enum Value
+    {
+        CocaCola, PepsiCo, Faygo, Toscana, Regions, Fritolay
+    }
+}
